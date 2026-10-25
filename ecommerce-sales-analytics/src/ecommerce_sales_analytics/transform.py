@@ -85,7 +85,7 @@ def transform_carts(conn):
             total_products, total_quantity, dwh_create_date)
         SELECT 
             (raw_data ->> 'id'):: INTEGER,
-            (raw_data ->> 'user_id'):: INTEGER,
+            (raw_data ->> 'userId'):: INTEGER,
             (raw_data ->> 'total'):: NUMERIC,
             (raw_data ->> 'discountedTotal'):: NUMERIC,
             (raw_data ->> 'totalProducts'):: INTEGER,
@@ -94,7 +94,6 @@ def transform_carts(conn):
         FROM bronze.raw_carts
         WHERE raw_data ->> 'id' ~ '^[0-9]+$'
         ON CONFLICT (cart_id) DO UPDATE SET 
-            cart_id = EXCLUDED.cart_id,
             user_id = EXCLUDED.user_id,
             total = EXCLUDED.total,
             discounted_total = EXCLUDED.discounted_total,
