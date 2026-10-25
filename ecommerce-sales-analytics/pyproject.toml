@@ -1,0 +1,24 @@
+[project]
+name = "ecommerce-sales-analytics"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Duawhaaus-png", email = "kimcheese2012@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pandas>=3.0.6",
+    "path>=17.1.1",
+    "psycopg[binary]>=3.3.6",
+    "python-dotenv>=1.2.4",
+    "requests>=2.34.2",
+    "sqlalchemy>=2.1.5",
+]
+
+[project.scripts]
+ecommerce-sales-analytics = "ecommerce_sales_analytics:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
