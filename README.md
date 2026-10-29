@@ -55,6 +55,7 @@ flowchart TD
 **Bronze Layer**
 - `bronze.raw_products`
 - `bronze.raw_carts`
+- `bronze.raw_users`
 
 **Silver Layer**
 - `silver.products`
